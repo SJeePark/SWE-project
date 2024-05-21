@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피싱 예방</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            width: auto;
+            height: auto;
+        }
+        .menus{
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 4px double rgb(101, 101, 101);
+        }
+
+        .menus button{
+            border: none;
+            background: none;
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        .menus button:hover{
+            background-color: rgba(204, 217, 179, 0.759);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        header {
+            font-family: 'GongGothicMedium';
+            background-color: #ffffff;
+            font-size: 30px;
+            color: #003399;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 3px solid rgb(196, 196, 196);
+        }
+
+        section {
+            margin: 40px;
+            font-size: 20px;
+            padding: 10px;
+            
+        }
+        .title{
+            font-size: 35px;
+            font-weight: bold;
+            font-family: 'MICEGothic Bold';
+        }
+        .explanation{
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            /* display: flex; */
+        }
+
+        .scam-video {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            display: flex;
+        }
+
+        .video {
+            margin-top: 100px;
+            margin-right: 110px;
+            margin-bottom: 50px;
+        }
+
+        .scam-stat img {
+            text-align: center;
+            margin: 20px 20px;
+            padding: 20px;
+            width:380px;
+    height:220px;
+    overflow:hidden;
+    margin:0 auto;
+        
+            }
+
+
+        .app-listing {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 90px;
+            background-color: #fff;
+        }
+
+        .app-listing table {
+            width: 100%;
+            height: 90%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 30px;
+        }
+
+        .app-listing td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 50%;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .app-listing img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @font-face {
+        font-family: 'GongGothicMedium';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        @font-face {
+        font-family: 'MICEGothic Bold';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+    </style>
+</head>
+
+
+<body>
+        <div class="menus">
+            <button onclick="window.open('키오스크연습.html')">키오스크</button>
+            <button onclick="window.open('문자피싱.html')">피싱예방</button>
+            <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+            <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+            <button>문제풀기</button>
+        </div>
+    <header>
+        <h1>피싱 예방법</h1>
+    </header>
+    
+
+    <section id="appListings">
+        <div class = 'explanation'>
+            <div class="title">피싱이란?</div>
+            <p style="font-family: Arial, Helvetica, sans-serif;">초기의 피싱은 피해자에게 전화를 걸어 공공기관, 금융기관, 수사기관 등을 사칭하며 카드대금 연체, 세금환급, 법원 출석요구 등을 빌미로 송금을 요구하는 '보이스 피싱', 도용한 로그인 정보로 지인을 사칭하며 메신저로 금전적 요구를 하는 '메신저 피싱' 등의 방식이 많이 이용됐었습니다.<br>
+            피싱에 대한 이용자들의 경계심과 대응력이 높아지면서 그 방법도 나날이 더 대담해지고 교묘해지고 있습니다. 특히 정보에 어두울 수 있는 노인, 사회 취약자들의 보이스 피싱 피해가 여전히 빈번하게 발생하고 있으며, 메신저로 개인정보를 탈취하는 악성코드가 배포되는 등 그 피해가 끊이지 않고 있어 이용자 주의가 요구됩니다.<br>
+            이러한 피싱 공격은 몇 가지 주의사항을 알아두는 것만으로도 피해를 크게 예방할 수 있습니다. 피싱 사례 유형과 함께 그에 대한 예방법을 알아봅시다. </p><br>
+            <div class="title">피싱 유형</div>    
+            <li>
+                문자 피싱
+            </li>
+            <li>
+                보이스 피싱
+            </li>
+        </div> 
+        <div class="scam-video">
+            <div class="title">어르신 피싱 관련 영상</div>
+            <div class="video">
+                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="video">
+                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="video">
+                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+
+        </div>
+
+        <div class="scam-video">
+            <div class="title">피싱 피해 통계</div><br>
+            <div class="scam-stat">
+                <img src="https://voicephisingzero.co.kr/uploaded/webedit/2310/1bf218295dfc4350b042a6dcdf801c7530f54401.png" alt="통계1">
+            </div>
+            <div class="scam-stat">
+                <img src="https://img7.yna.co.kr/etc/graphic/YH/2023/02/21/GYH2023022100030004400_P4.jpg" alt="통계2">
+            </div>
+            <p>4다음 사진은 피싱 사례 통계입니다. </p>
+
+            <!-- <div class="scam-stat">
+                <img src="이미지" alt="통계3"> -->
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <script>
+        const appData = [
+            {
+                imageUrl: "어플 이미지",
+                link: "어플 관련 링크",
+                title: "어플 이름",
+                company: "제작사",
+                description: `사용 방법 및 특이점`
+            },
+
+            {
+                imageUrl: "어플 이미지",
+                link: "어플 관련 링크",
+                title: "어플 이름",
+                company: "제작사",
+                description: `사용 방법 및 특이점`
+            },
+
+        ];
+
+        const appListingsContainer = document.getElementById('appListings');
+
+        appData.forEach(app => {
+            const appListing = document.createElement('div');
+            appListing.classList.add('app-listing');
+
+            appListing.innerHTML = `
+                <div class = 'title'>피싱 관련 예방법 소개(이미지 클릭시 관련 사이트로 이동)</div>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="${app.link}" target="_blank">
+                                <img src="${app.imageUrl}" alt="${app.title}"></a><br>
+                        </td>
+                        <td>
+                            <h3>${app.title}</h3>
+                            <p>${app.company}</p>
+                            <h4>어플 설명</h4>
+                            <p>${app.description}</p>
+                        </td>
+                    </tr>
+                </table>
+            `;
+
+            appListingsContainer.appendChild(appListing);
+        });
+    </script>
+
+</body>
+
+</html>
