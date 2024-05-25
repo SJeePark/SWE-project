@@ -48,8 +48,11 @@ body {
   font-size: 1.4rem;
   font-weight: 400;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 0px;
   font-family: 'SUITE-Regular';
+  h2{
+    margin-bottom: 10.0px;
+  }
 }
 
 .main {
