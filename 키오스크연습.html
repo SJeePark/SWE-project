@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk Practice</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product h2, .product p {
+    margin: 0;
+}
+
+.order-summary {
+    text-align: center;
+}
+
+#order-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#order-list li {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Kiosk</h1>
+        <div class="products">
+            <div class="product" data-name="Coffee" data-price="2.50">
+                <h2>Coffee</h2>
+                <p>$2.50</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="product" data-name="Tea" data-price="2.00">
+                <h2>Tea</h2>
+                <p>$2.00</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="product" data-name="Sandwich" data-price="5.00">
+                <h2>Sandwich</h2>
+                <p>$5.00</p>
+                <button>Add to Order</button>
+            </div>
+        </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-list"></ul>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button id="confirm-order">Confirm Order</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product button');
+    const orderList = document.getElementById('order-list');
+    const totalPriceElement = document.getElementById('total-price');
+    let totalPrice = 0.0;
+
+    products.forEach(button => {
+        button.addEventListener('click', () => {
+            const productElement = button.parentElement;
+            const productName = productElement.getAttribute('data-name');
+            const productPrice = parseFloat(productElement.getAttribute('data-price'));
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${productName} - $${productPrice.toFixed(2)}`;
+            orderList.appendChild(listItem);
+
+            totalPrice += productPrice;
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        });
+    });
+
+    document.getElementById('confirm-order').addEventListener('click', () => {
+        if (totalPrice > 0) {
+            alert(`Your order total is $${totalPrice.toFixed(2)}. Thank you for your purchase!`);
+            orderList.innerHTML = '';
+            totalPrice = 0.0;
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        } else {
+            alert('Please add some items to your order before confirming.');
+        }
+    });
+});
+    </script>
+
+
+    
+</body>
+</html>

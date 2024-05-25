@@ -1,156 +1,164 @@
-body{
-  /* width: auto;
-  height: auto; */
-  background-position : bottom left;
+body {
+  background-position: center bottom;;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .nav {
-      height: 70px;
-      border-bottom: 1px solid black;
-      display: flex;
-      align-items: center;
-    }
+  height: 70px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+}
 
-    .nav-right-items {
-      font-size: 1.25rem;
-      display: flex;
-      /* margin-left: auto; */
-    }
+.nav-right-items {
+  font-size: 1.25rem;
+  display: flex;
+}
 
-    .nav-item {
-      margin-left: 10px;
-    }
+.nav-item {
+  margin-left: 10px;
+}
 
-    .title {
-      text-align: left;
-      font-size: 3.5rem;
-      font-weight: bold;
-      font-family: 'JalnanGothic';
-      color: #003399;
-      margin-left: 20px;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid rgb(196, 196, 196);
-      width: auto;
+.title {
+  text-align: left;
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: 'JalnanGothic';
+  color: #003399;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid rgb(196, 196, 196);
+  width: auto;
+}
 
-    }
+.minititle {
+  text-align: left;
+  font-size: 2rem;
+  font-family: 'JalnanGothic';
+  color: #1f6fd0;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
 
-    .minititle{
-      text-align: left;
-      font-size: 2rem;
-      font-family: 'JalnanGothic';
-      color: #1f6fd0;
-      margin-bottom: 10px;
-      margin-left: 20px;
-      margin-top: 30px;
-    }
+.subtitle {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-family: 'SUITE-Regular';
+}
 
-    .subtitle {
-      text-align: left;
-      font-size: 1.4rem;
-      font-weight: 400;
-      margin-left: 20px;
-      margin-top: 5px;
-      font-family: 'SUITE-Regular';
-    }
+.main {
+  width: 2000px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
 
-    .main {
-      width: 2000px;
-      margin: 0 auto;
-      margin-top: 60px;
-    }
+.prices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-    .prices {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-    }
+.price-item {
+  width: 300px;
+  height: 300px;
+  border: 3px solid black;
+  margin: 20px;
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+}
 
-    .price-item {
-      width: 300px;
-      height: 300px;
-      border: 3px solid black;
-      margin: 20px;
-      border-radius: 15px;
-      align-items: center;
-      text-align: center;
-      background-color: white;
-    }
+.price-item-title {
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, .03);
+  text-align: center;
+  height: 53px;
+  line-height: 53px;
+  border-bottom: 1px solid black;
+  font-family: 'SUITE-Regular';
+}
 
-    .price-item-title {
-      font-size: 1.5rem;
-      background-color: rgba(0, 0, 0, .03);
-      text-align: center;
-      height: 53px;
-      line-height: 53px;
-      border-bottom: 1px solid black;
-      font-family: 'SUITE-Regular';
-    }
+.price-item-price {
+  font-size: 2.1rem;
+  font-weight: bold;
+  padding: 20px;
+}
 
-    .price-item-price {
-      font-size: 2.1rem;
-      font-weight: bold;
-      padding: 20px;
-    }
+.price-item-button {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: .3rem;
+  color: #023c7a;
+  border-color: #007bff;
+  margin-top: 20px;
+  text-decoration-line: none;
+}
 
-    .price-item-button {
-      padding: .5rem 1rem;
-      font-size: 1.25rem;
-      font-weight: 600;
-      line-height: 1.5;
-      border-radius: .3rem;
-      color: #023c7a;
-      border-color: #007bff;
-      margin-top: 20px;
-      text-decoration-line: none;
+.price-item-button a {
+  text-align: center;
+  text-decoration: none; /* 링크의 밑줄 제거 */
+  color: inherit; /* 링크의 색상 제거 */
+}
 
-    }
+.price-item-button:hover {
+  background-color: #cbdfee;
+  cursor: pointer;
+}
 
-    .price-item-button a {  
-      text-align: center;  
-      text-decoration: none; /* 링크의 밑줄 제거 */  
-      color: inherit; /* 링크의 색상 제거 */}
+footer {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
 
-    .price-item-button:hover {
-      background-color: #cbdfee;
-      cursor: pointer;
-    }
-
-    footer{
-      align-content: center;
-      display: flex;
-      justify-content: center;
-    }
-
-
-    @media screen and (max-width: 768px) {
-      .prices{
-        align-items: center;
-        justify-content: center;
-        display:inline-block;
-        align-content:center;
-      }
-
-      .price-item{
-        align-items: center;
-        justify-content: center;
-        display:inline-block;
-        align-content:center;
-      }
-    }
-
-    @font-face {
-      font-family: 'JalnanGothic';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'SUITE-Regular';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
+@media screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
   }
+
+  .prices {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .price-item {
+    width: 45%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .price-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@font-face {
+  font-family: 'JalnanGothic';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SUITE-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
