@@ -1,0 +1,199 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+.real-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'JalnanGothic';
+    color: #003399;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: auto;
+}
+
+.minititle {
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'JalnanGothic';
+    color: #1f6fd0;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+a {
+    display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+}
+
+.menus {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 4px double rgb(101, 101, 101);
+}
+
+.menus button {
+    border: none;
+    background: none;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.menus button:hover {
+    background-color: rgba(204, 217, 179, 0.759);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.img-container img {
+    width: 35%;
+    height: auto;
+}
+
+header {
+    font-family: 'GongGothicMedium';
+    background-color: #ffffff;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 3px solid rgb(196, 196, 196);
+}
+
+img {
+    width: 100px;
+    height: auto;
+}
+
+section {
+    margin: 40px;
+    font-size: 20px;
+    padding: 10px;
+    
+}
+
+.title {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'MICEGothic Bold';
+}
+
+.explanation {
+    border: 1px solid #ddd;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+
+.scam-video {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 아이템들을 부모 요소의 양 끝에 정렬합니다. */
+    align-items: center; /* 아이템들을 수직으로 가운데 정렬합니다. */
+}
+
+.video {
+    width: calc(30% - 20px); /* 각 동영상 요소의 너비를 설정합니다. 여기서 20px는 마진의 크기입니다. */
+    margin-bottom: 20px; /* 각 동영상 요소의 아래 여백을 지정합니다. */
+}
+
+.scam-stat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center;     /* Center-align items vertically */
+    gap: 20px;               /* Add some space between images */
+    margin: 20px;            /* Margin around the container */
+    padding: 20px;           /* Padding inside the container */
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.scam-stat img {
+    flex: 1 1 30%;           /* Allow images to grow and shrink, and set a base width */
+    max-width: 200px;        /* Set a max width to maintain equal sizing */
+    height: auto;            /* Maintain aspect ratio */
+    margin: 10px;            /* Margin around each image */
+    object-fit: cover;       /* Ensure the image covers the container without stretching */
+}
+
+.app-listing {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 90px;
+    background-color: #fff;
+}
+
+.app-listing table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 30px;
+}
+
+.app-listing td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.app-listing img {
+    max-width: 100%;
+    height: auto;
+}
+
+th{
+    color: white;
+    background-color: #417bee;
+}
+
+td{
+    background-color: rgb(243, 243, 243);
+}
+
+.row{
+    font-weight: bold;
+    text-align: center; 
+}
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JalnanGothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

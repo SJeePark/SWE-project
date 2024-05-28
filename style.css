@@ -44,15 +44,27 @@ body {
 }
 
 .subtitle {
+  display: flex; /* Flexbox 사용 */
+  align-items: center; /* 세로 가운데 정렬 */
+  gap: 20px; /* 요소들 간의 간격 */
   text-align: left;
   font-size: 1.4rem;
   font-weight: 400;
-  margin-left: 20px;
-  margin-top: 0px;
+  margin-left: 25px;
+  margin-top: 40px;
   font-family: 'SUITE-Regular';
-  h2{
-    margin-bottom: 10.0px;
-  }
+}
+
+.subtitle h2 {
+  margin-right: 20px; /* h2와 p 사이에 간격 추가 */
+  flex-shrink: 0; /* h2 요소 크기 고정 */
+}
+
+.subtitle p {
+  margin: 10px;
+  margin-right: 50px; /* margin 제거 */
+  flex-grow: 1; /* p 요소가 남은 공간 차지 */
+  font-size: 20px;
 }
 
 .main {
