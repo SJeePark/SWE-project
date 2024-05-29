@@ -11,22 +11,86 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            width: auto;
+            height: auto;
+        }
+
+        .real-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'JalnanGothic';
+    color: #003399;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    a {
+        display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+    }
+}
+
+.minititle {
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'JalnanGothic';
+    color: #1f6fd0;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+        .menus {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-top: 1px solid #ebebeb;
+            border-bottom: 4px double rgb(101, 101, 101);
+        }
+
+        .menus button {
+            border: none;
+            background: none;
+            margin: 5px;
+        }
+
+        .menus button:hover {
+            background-color: rgba(204, 217, 179, 0.759);
+            font-weight: bold;
+            cursor: pointer;
         }
 
         header {
-            background-color: #333333;
-            font-size: 20px;
-            color: white;
-            padding: 10px;
+            font-family: 'GongGothicMedium';
+            background-color: #ffffff;
+            font-size: 30px;
+            color: #003399;
+            padding: 5px;
             text-align: center;
+            border-bottom: 3px solid rgb(196, 196, 196);
         }
 
         section {
             margin: 40px;
             font-size: 20px;
+            padding: 10px;
         }
 
-        .QR-video {
+        .title {
+            font-size: 35px;
+            font-weight: bold;
+            font-family: 'MICEGothic Bold';
+        }
+
+        .explanation {
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            /* display: flex; */
+        }
+
+        .scam-video {
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 30px;
@@ -40,13 +104,12 @@
             margin-bottom: 50px;
         }
 
-        .QR-stat img {
-            text-align: center;
-            margin-top: 100px;
-            margin-right: 110px;
-            margin-bottom: 50px;
+        .scam-stat img, .scam-video img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
-
 
         .app-listing {
             border: 1px solid #ddd;
@@ -75,53 +138,78 @@
             max-width: 100%;
             height: auto;
         }
+
+        @font-face {
+            font-family: 'GongGothicMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MICEGothic Bold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
     </style>
 </head>
 
-
 <body>
+    <span class="logo">
+        <a href="mainpage.html" style="text-decoration-line: none;">
+            <div class="minititle">
+                당신도 할 수 있다,
+            </div>  
+            <div class="real-title">
+                디지털 배움터
+            </div>
+        </a>
+    </span>
 
+    <div class="menus">
+        <button onclick="window.open('키오스크연습.html')">키오스크</button>
+        <button onclick="window.open('문자피싱.html')">피싱예방</button>
+        <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+        <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+        <button>문제풀기</button>
+    </div>
     <header>
         <h1>QR코드 사용법</h1>
     </header>
 
     <section id="appListings">
-        <div class="QR-video">
-            <h2>QR코드 사용법 영상</h2>
+        <div class='explanation'>
+            <div class="title">QR코드란?</div>
+            <p style="font-family: Arial, Helvetica, sans-serif;">정의</p>QR코드는 'Quick Response'의 약자로, 빠르게 정보를 읽어낼 수 있는 특별한 바코드입니다. 네모난 모양 안에 작은 사각형들이 모여있는 모습입니다. 보통 스마트폰이나 태블릿 같은 기기로 스캔하면 다양한 정보(예: 웹사이트, 연락처, 메뉴판 등)를 바로 확인할 수 있습니다.<br>
+            <div class="title">사용되는 곳</div>
+            <li>
+                식당 주문
+            </li>
+            <li>
+                간편 결제
+            </li>
+            <li>
+                정보 제공
+            </li>
+        </div>
+        <div class="scam-video">
+            <div class="title">QR코드 사용 영상</div>
             <div class="video">
-                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
+                <iframe width="764.444444" height="430" src="https://www.youtube.com/embed/fwbxf1crd3M" frameborder="0" allowfullscreen></iframe>
             </div>
-
-            <div class="video">
-                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="video">
-                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-
         </div>
 
-        <div class="QR-video">
-            <h2>사용 방법</h2>
-            <div class="QR-stat">
-                <img src="이미지" alt="통계1">
-            </div>
-
-            <div class="QR-stat">
-                <img src="이미지" alt="통계2">
-            </div>
-
-            <div class="QR-stat">
-                <img src="이미지" alt="통계3">
-            </div>
-
-
+        <div class="scam-video">
+            <div class="title">QR코드 해보기</div><br>
+            <div class="scam-stat"></div>
+            <a href="https://ifh.cc/v-SVHsvp" target="_blank">
+                <img src="https://ifh.cc/g/SVHsvp.png" border="0">
+            </a>
+            <!-- 업로드된 이미지 파일 추가 -->
+            <img src="/mnt/data/image.png" alt="QR 코드">
         </div>
-
     </section>
-
 
 </body>
 
