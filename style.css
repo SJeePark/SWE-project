@@ -1,5 +1,6 @@
 body {
-  background-position: center bottom;;
+  background-image: url("https://img.freepik.com/free-vector/flat-design-seniors-using-technology-illustrated_23-2148816004.jpg?t=st=1716257707~exp=1716261307~hmac=a161de2fb8577387b8c90260683d11aa7f8113cb59b7ddb6ecf4e69c1f0a3dd1&w=1380");
+  background-position: center bottom -20%;
   background-repeat: no-repeat;
   background-size: contain;
 }

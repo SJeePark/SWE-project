@@ -16,6 +16,9 @@ body {
     margin-bottom: 10px;
     padding-bottom: 10px;
     width: auto;
+    a {
+        display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+    }
 }
 
 .minititle {
@@ -26,10 +29,6 @@ body {
     margin-bottom: 10px;
     margin-left: 20px;
     margin-top: 30px;
-}
-
-a {
-    display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
 }
 
 .menus {
@@ -54,11 +53,29 @@ a {
     cursor: pointer;
 }
 
+.row-table{
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+
+li{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 40px;
+    background-color: rgb(195, 212, 195);
+    background-size: 80%;
+    
+}
+
 .img-container {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .img-container img {
@@ -91,6 +108,7 @@ section {
     font-size: 35px;
     font-weight: bold;
     font-family: 'MICEGothic Bold';
+    margin: 10px;
 }
 
 .explanation {
@@ -102,19 +120,38 @@ section {
 
 .scam-video {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 30px;
     margin-bottom: 30px;
     background-color: #fff;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* 아이템들을 부모 요소의 양 끝에 정렬합니다. */
-    align-items: center; /* 아이템들을 수직으로 가운데 정렬합니다. */
+    flex-wrap: wrap; /* 아이템들이 여러 줄로 배치될 수 있도록 함 */
+    justify-content: space-between; /* 아이템들을 부모 요소의 양 끝에 정렬 */
+    align-items: flex-start; /* 아이템들을 상단에 정렬 */
 }
 
-.video {
-    width: calc(30% - 20px); /* 각 동영상 요소의 너비를 설정합니다. 여기서 20px는 마진의 크기입니다. */
-    margin-bottom: 20px; /* 각 동영상 요소의 아래 여백을 지정합니다. */
+.video-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 70px;
+    gap: 0px; /* 클래스 간의 간격을 줄이기 위해 추가 */
 }
+
+.video, video-title{
+    width: 48%; /* 각 요소의 너비를 조금 줄임 */
+    height: auto;
+    iframe{
+        width: 600px;
+        height: 300px;
+    }
+}
+
+.video-title {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .scam-stat {
     display: flex;
@@ -136,6 +173,12 @@ section {
     object-fit: cover;       /* Ensure the image covers the container without stretching */
 }
 
+.preven-img{
+    width: 80%;
+    margin: auto;
+
+}
+w
 .app-listing {
     border: 1px solid #ddd;
     padding: 10px;
