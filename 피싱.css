@@ -1,8 +1,16 @@
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'NanumSquareRound';
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    
+}
+
+
+.logo a {
+    text-decoration: none;
+    text-decoration-line: none;
+    display: inline-block; /* 링크를 글씨 크기에 맞추기 위해 inline-block으로 설정 */
 }
 
 
@@ -19,6 +27,10 @@ body {
     a {
         display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
     }
+}
+
+button{
+    margin: 10px 30px;
 }
 
 .minititle {
@@ -53,10 +65,34 @@ body {
     cursor: pointer;
 }
 
-.row-table{
+.row-table {
     width: 90%;
-    margin: 0 auto;
+    margin: 4% auto;
+    border-collapse: collapse;
+    padding-top: 20px;
+}
+.row-table th{
+    border: 1px solid #00000065;
+    padding: 10px;
+    text-align: left
+}
 
+.row-table td {
+    border: 1px solid #00000065;
+    padding: 20px;
+    text-align: left;
+}
+
+.row-table .row{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.row-table th {
+    text-align: center;
+}
+.row-table tr {
+    height: 50px;
 }
 
 
@@ -64,10 +100,18 @@ li{
     font-size: 30px;
     font-weight: bold;
     padding: 10px;
-    margin-top: 40px;
+    margin-top: 50px;
     background-color: rgb(195, 212, 195);
-    background-size: 80%;
+    background-size: 70%;
+    list-style-type: none;
+    padding-left: 10px;
     
+}
+
+.fishing-ex{
+    font-size: 1.3rem;
+    line-height: 40px;
+    margin: 20px;
 }
 
 .img-container {
@@ -76,6 +120,7 @@ li{
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .img-container img {
@@ -90,6 +135,7 @@ header {
     padding: 5px;
     text-align: center;
     border-bottom: 3px solid rgb(196, 196, 196);
+    color: #003399;
 }
 
 img {
@@ -105,29 +151,20 @@ section {
 }
 
 .title {
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
     font-family: 'MICEGothic Bold';
     margin: 10px;
 }
 
 .explanation {
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     padding: 30px;
     margin-bottom: 30px;
     background-color: #fff;
 }
 
-.scam-video {
-    border: 1px solid #ddd;
-    padding: 30px;
-    margin-bottom: 30px;
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap; /* 아이템들이 여러 줄로 배치될 수 있도록 함 */
-    justify-content: space-between; /* 아이템들을 부모 요소의 양 끝에 정렬 */
-    align-items: flex-start; /* 아이템들을 상단에 정렬 */
-}
+
 
 .video-section {
     display: flex;
@@ -135,16 +172,17 @@ section {
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 70px;
-    gap: 0px; /* 클래스 간의 간격을 줄이기 위해 추가 */
+    gap: 0px;
 }
 
-.video, video-title{
-    width: 48%; /* 각 요소의 너비를 조금 줄임 */
+.video, .video-title {
+    width: 48%;
+}
+
+.video iframe {
+    width: 100%;
     height: auto;
-    iframe{
-        width: 600px;
-        height: 300px;
-    }
+    aspect-ratio: 16/9; /* 비율을 유지하여 동영상 크기를 자동 조정 */
 }
 
 .video-title {
@@ -152,6 +190,17 @@ section {
     flex-direction: column;
 }
 
+
+.scam-video {
+    border: 2px solid #ddd;
+    padding: 30px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
 .scam-stat {
     display: flex;
@@ -161,7 +210,7 @@ section {
     gap: 20px;               /* Add some space between images */
     margin: 20px;            /* Margin around the container */
     padding: 20px;           /* Padding inside the container */
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     background-color: #fff;
 }
 
@@ -173,14 +222,19 @@ section {
     object-fit: cover;       /* Ensure the image covers the container without stretching */
 }
 
-.preven-img{
-    width: 80%;
-    margin: auto;
-
+.prevention{
+    border: 2px solid #ddd;
+    padding: 30px;
+    margin-bottom: 30px;
 }
-w
+
+.prevent-img{
+    width: 60%;
+    margin: auto;
+}
+
 .app-listing {
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     padding: 10px;
     margin-bottom: 90px;
     background-color: #fff;
@@ -208,7 +262,7 @@ w
 
 th{
     color: white;
-    background-color: #417bee;
+    background-color: #486baf;
 }
 
 td{
@@ -219,6 +273,12 @@ td{
     font-weight: bold;
     text-align: center; 
 }
+
+p{
+    font-size: 1.3rem;
+    line-height: 40px;
+}
+
 
 @font-face {
     font-family: 'GongGothicMedium';
@@ -237,6 +297,13 @@ td{
 @font-face {
     font-family: 'JalnanGothic';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

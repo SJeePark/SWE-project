@@ -1,146 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiosk Practice</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <title>키오스크 사용법</title>
     <style>
+   .minititle {
+            text-align: left;
+            font-size: 1rem;
+            font-family: 'JalnanGothic';
+            color: #1f6fd0;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+        .real-title {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'JalnanGothic';
+            color: #003399;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            width: auto;
+            a {
+                display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+            }
+        }
         body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            width: auto;
+            height: auto;
+        }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
+        .menus {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-top: 1px solid #ebebeb;
+            border-bottom: 4px double rgb(101, 101, 101);
+        }
 
-h1, h2 {
-    text-align: center;
-}
+        .menus button {
+            border: none;
+            background: none;
+            margin: 5px;
+        }
 
-.products {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+        .menus button:hover {
+            background-color: rgba(204, 217, 179, 0.759);
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-.product {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+        header {
+            font-family: 'GongGothicMedium';
+            background-color: #ffffff;
+            font-size: 30px;
+            color: #003399;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 3px solid rgb(196, 196, 196);
+        }
 
-.product h2, .product p {
-    margin: 0;
-}
+        section {
+            margin: 40px;
+            font-size: 20px;
+            padding: 10px;
+        }
 
-.order-summary {
-    text-align: center;
-}
+        .title {
+            font-size: 35px;
+            font-weight: bold;
+            font-family: 'MICEGothic Bold';
+        }
 
-#order-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-}
+        .explanation {
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            /* display: flex; */
+        }
 
-#order-list li {
-    margin: 5px 0;
-}
+        .scam-video {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            display: flex;
+        }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .video {
+            margin-top: 100px;
+            margin-right: 110px;
+            margin-bottom: 50px;
+        }
 
-button:hover {
-    background-color: #0056b3;
-}
+        .scam-stat img, .scam-video img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .app-listing {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 90px;
+            background-color: #fff;
+        }
+
+        .app-listing table {
+            width: 100%;
+            height: 90%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 30px;
+        }
+
+        .app-listing td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 50%;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .app-listing img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @font-face {
+            font-family: 'GongGothicMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MICEGothic Bold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Welcome to Kiosk</h1>
-        <div class="products">
-            <div class="product" data-name="Coffee" data-price="2.50">
-                <h2>Coffee</h2>
-                <p>$2.50</p>
-                <button>Add to Order</button>
+    <span class="logo">
+        <a href="mainpage.html" style="text-decoration-line: none;">
+            <div class="minititle">
+                당신도 할 수 있다,
+            </div>  
+            <div class="real-title">
+                디지털 배움터
             </div>
-            <div class="product" data-name="Tea" data-price="2.00">
-                <h2>Tea</h2>
-                <p>$2.00</p>
-                <button>Add to Order</button>
-            </div>
-            <div class="product" data-name="Sandwich" data-price="5.00">
-                <h2>Sandwich</h2>
-                <p>$5.00</p>
-                <button>Add to Order</button>
-            </div>
-        </div>
-        <div class="order-summary">
-            <h2>Order Summary</h2>
-            <ul id="order-list"></ul>
-            <p>Total: $<span id="total-price">0.00</span></p>
-            <button id="confirm-order">Confirm Order</button>
-        </div>
+        </a>
+    <div class="menus">
+        <button onclick="window.open('키오스크연습.html')">키오스크</button>
+        <button onclick="window.open('문자피싱.html')">피싱예방</button>
+        <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+        <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+        <button>문제풀기</button>
+        
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const products = document.querySelectorAll('.product button');
-    const orderList = document.getElementById('order-list');
-    const totalPriceElement = document.getElementById('total-price');
-    let totalPrice = 0.0;
+    <header>
+        <h1>키오스크</h1>
+    </header>
 
-    products.forEach(button => {
-        button.addEventListener('click', () => {
-            const productElement = button.parentElement;
-            const productName = productElement.getAttribute('data-name');
-            const productPrice = parseFloat(productElement.getAttribute('data-price'));
+    <section id="appListings">
+        <div class='explanation'>
+            <div class="title">키오스크란?</div>
+            <p style="font-family: Arial, Helvetica, sans-serif;">정의</p>음식,음료 등을 파는 매점'을 뜻하는 영어단어로, 정보통신에서는 정보서비스와 업무의 무인ㆍ자동화를 통해 대중들이 쉽게 이용할 수 있도록 공공장소에 설치한 무인단말기를 말한다.<br>
+           
+        </div>
+        <div class="container">
+            <h1>키오스크 사용법</h1>
+            <div class="scam-video">
+                <div class = "title"> 키오스크 사용법 영상</div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/F2qdVZPxpLA" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
 
-            const listItem = document.createElement('li');
-            listItem.textContent = `${productName} - $${productPrice.toFixed(2)}`;
-            orderList.appendChild(listItem);
+        <div class="scam-video">
+            <script src="l_first_time.js"></script>
 
-            totalPrice += productPrice;
-            totalPriceElement.textContent = totalPrice.toFixed(2);
-        });
-    });
+    <div class="main" onclick="start_btn()">
 
-    document.getElementById('confirm-order').addEventListener('click', () => {
-        if (totalPrice > 0) {
-            alert(`Your order total is $${totalPrice.toFixed(2)}. Thank you for your purchase!`);
-            orderList.innerHTML = '';
-            totalPrice = 0.0;
-            totalPriceElement.textContent = totalPrice.toFixed(2);
-        } else {
-            alert('Please add some items to your order before confirming.');
-        }
-    });
-});
-    </script>
+        <div class="title wrapper">
+            <div class="maintitle">키오스크가 처음이라면?</div>
+        </div>
+        <div id="페이지설명">키오스크는 무인으로 주문을 할 수 있는 기계를 의미해요. 
+            <br>이 페이지에서는 키오스크의 보편적인 사용법에 대해 익힐 수 있어요.<br>
+            <br>화면을 터치하면 다음 설명으로 넘어갈 수 있어요!
+            화면을 터치하여 주세요.
+        </div>
+
+        <div></div>
+    </div>
 
 
-    
-</body>
+    <div class="kiosk_simulation">
+
+        <div class="kiosk_mega_backdround">
+
+            <div class="kiosc_mega_screen">
+
+
+                <div id="mega_start_img">
+                    <button id="mega_start_btn" onclick="main_onclick()"></button>
+                </div>
+
+
+                <div id="mega_order">
+                    <div id="top_bar">
+                        <div id="mega_top_bar_home" onclick="herf_home()"></div>
+                        <div id="mega_top_bar_name">키오스크배우기</div>
+                        <div id="mega_top_bar_lang">LANG</div>
+                    </div>
+
+                    <div id="mega_menu_bar">
+                        <div id="menu_bar_left" onclick="turn_menu_page(this.id)">&#60;</div>
+                        <div class="mega_menu_1" title="추천_음료" onclick="open_menu_table(this.title)">추천(음료)</div>
+                        <div class="mega_menu_1" title="추천_디저트" onclick="open_menu_table(this.title)">추천(디저트)</div>
+                        <div class="mega_menu_1" title="커피_HOT" onclick="open_menu_table(this.title)">커피(HOT)</div>
+                        <div class="mega_menu_1" title="커피_ICE" onclick="open_menu_table(this.title)">커피(ICE)</div>
+
+
+                        <div class="mega_menu_2" title="스무디_프라페" onclick="open_menu_table(this.title)">스무디&프라페</div>
+                        <div class="mega_menu_2" title="에이드_주스" onclick="open_menu_table(this.title)">에이드&주스</div>
+                        <div class="mega_menu_2" title="Tea" onclick="open_menu_table(this.title)">Tea</div>
+                        <div class="mega_menu_2" title="커피_콜드브루" onclick="open_menu_table(this.title)">커피(콜드브루)</div>
+
+
+
+                        <div id="menu_bar_right" onclick="turn_menu_page(this.id)">></div>
+                    </div>
+                </div>
+
+
+                <div id="mega_menu_table">
+                    <div id="right_btn">></div>
+                    <div id="left_btn">&#60;</div>
+
+                    <div id="추천_음료" class="p1">
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="유니콘프라페" title="no_option" data-price="4800"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+
+                        </div>
+                        <div id="row">
+                            <div id="hot_토피넛마끼아또" title="coldbrew" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_토피넛마끼아또" title="coldbrew" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div id="커피_HOT">
+                        <div id="row">
+                            <div id="hot_아메리카노" title="coffee" data-price="1500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_꿀아메리카노" title="coffee" data-price="2500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_헤이즐넛라떼" title="coffee" data-price="3200"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_바닐라아메리카노" title="coffee" data-price="2500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="hot_카페라떼" title="coffee" data-price="2700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_카푸치노" title="coffee" data-price="2700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_연유라뗴" title="coffee" data-price="3700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_티라미수라떼" title="coffee" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="hot_캬라멜마끼아또" title="coffee" data-price="3500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_바닐라라떼" title="coffee" data-price="3200"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_헤이즐넛아메리카노" title="coffee" data-price="2500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="hot_카메모카" title="coffee" data-price="3700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                    </div>
+
+                    <div id="커피_ICE">
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_꿀아메리카노" title="coffee" data-price="2500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_헤이즐넛아메리카노" title="coffee" data-price="2500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_바닐라아메리카노" title="coffee" data-price="2500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="ice_카페라떼" title="coffee" data-price="2700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_바닐라라떼" title="coffee" data-price="3200"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_큐브라떼" title="coffee" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_티라미수라떼" title="coffee" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="ice_캬라멜마끼아또" title="coffee" data-price="3500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_카푸치노" title="coffee" data-price="2700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_헤이즐넛라떼" title="coffee" data-price="3200"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_카메모카" title="coffee" data-price="3700"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                    </div>
+
+                    <div id="스무디_프라페">
+                        <div id="row">
+                            <div id="쿠키프라페" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="민트프라페" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="유니콘프라페" title="no_option" data-price="4800"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="리얼초코프라페" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="녹차프라페" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="딸기쿠키프라페" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="스트로베리치즈홀릭" title="no_option" data-price="4500"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="커피프라페" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="퐁크러쉬플레인" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="퐁크러쉬딸기" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="퐁크러쉬바나나" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="플레인요거트스무디" title="no_option" data-price="3900"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="nextpage">
+                    <div id="first_page"></div>
+                    <div id="second_page"></div>
+                </div>
+
+
+                <div id="pay">
+                    <div id="order_lsit">
+                        <div id="order_1" class="cart">
+                            <div id="delete_1">X</div>
+                            <div id="range_1">1. 아메리카노</div>
+                            <div id="minus_1">ㅡ</div>
+                            <div id="amount_1">1개</div>
+                            <div id="plus_1">╋</div>
+                            <div id="item_price_1">2,000원</div>
+                        </div>
+                        <div id="order_2" class="cart">
+                            <div id="delete_2">X</div>
+                            <div id="range_2"></div>
+                            <div id="minus_2">ㅡ</div>
+                            <div id="amount_2"></div>
+                            <div id="plus_2">╋</div>
+                            <div id="item_price_2"></div>
+                        </div>
+                        <div id="order_3" class="cart">
+                            <div id="delete_3">X</div>
+                            <div id="range_3"></div>
+                            <div id="minus_3">ㅡ</div>
+                            <div id="amount_3"></div>
+                            <div id="plus_3">╋</div>
+                            <div id="item_price_3"></div>
+                        </div>
+                        <div id="order_4" class="cart">
+                            <div id="delete_4">X</div>
+                            <div id="range_4"></div>
+                            <div id="minus_4">ㅡ</div>
+                            <div id="amount_4"></div>
+                            <div id="plus_4">╋</div>
+                            <div id="item_price_4"></div>
+                        </div>
+                        <div id="order_5" class="cart">
+                            <div id="delete_5">X</div>
+                            <div id="range_5"></div>
+                            <div id="minus_5">ㅡ</div>
+                            <div id="amount_5"></div>
+                            <div id="plus_5">╋</div>
+                            <div id="item_price_5"></div>
+                        </div>
+                        <div id="order_6" class="cart">
+                            <div id="delete_6">X</div>
+                            <div id="range_6"></div>
+                            <div id="minus_6">ㅡ</div>
+                            <div id="amount_6"></div>
+                            <div id="plus_6">╋</div>
+                            <div id="item_price_6"></div>
+                        </div>
+                        <div id="order_7" class="cart">
+                            <div id="delete_7">X</div>
+                            <div id="range_7"></div>
+                            <div id="minus_7">ㅡ</div>
+                            <div id="amount_7"></div>
+                            <div id="plus_7">╋</div>
+                            <div id="item_price_7"></div>
+                        </div>
+
+                    </div>
+
+                    <div id="order_list_right">
+                        <div id="pay_right">
+                            <div id="rest_time">남은시간<br>120초</div>
+                            <div id="delete_all" onclick="전체삭제()"></div>
+                        </div>
+                        <div id="item_number">_________________________<br>선택한 상품 </div>
+                        <div id="pay_btn">
+                            <div id="total_price" onclick="open_window_pay()">0원<br>결제하기</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="screen_bottom">
+                    <div id="barcode">
+                        <div id="barcode_img"></div>
+                        <div>바코드를 대주세요</div>
+                        <div id="barcode_png"></div>
+                    </div>
+                    <div id="insert_card">
+                        <div>카드를 넣어주세요</div>
+                        <div id="insert_card_block"></div>
+                        <div id="use_card_block">_______________________________</div>
+                        <div>카드를 긁어주세요</div>
+                        <div id="receipt">
+                            <div id="receipt_exit"></div>
+                            <div id="receipt_img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="insert_card_moving" onclick="결제완료()"></div>
+
+                <div id="screen_to_window_pay"></div>
+
+                <div id="window_pay">
+                    <div id="window_top">
+                        <div>주문 세부내역을 다시 한번 확인하여 주세요</div>
+                        <div onclick="close_window_pay()">X</div>
+                    </div>
+                    <div id="window_order_list">
+                        <div id="window_1">
+                            <div id="w_order_1"></div>
+                            <div id="w_number_1"></div>
+                        </div>
+                        <div id="window_2">
+                            <div id="w_order_2"></div>
+                            <div id="w_number_2"></div>
+                        </div>
+                        <div id="window_3">
+                            <div id="w_order_3"></div>
+                            <div id="w_number_3"></div>
+                        </div>
+                        <div id="window_4">
+                            <div id="w_order_4"></div>
+                            <div id="w_number_4"></div>
+                        </div>
+                        <div id="window_5">
+                            <div id="w_order_5"></div>
+                            <div id="w_number_5"></div>
+                        </div>
+                        <div id="window_6">
+                            <div id="w_order_6"></div>
+                            <div id="w_number_6"></div>
+                        </div>
+                        <div id="window_7">
+                            <div id="w_order_7"></div>
+                            <div id="w_number_7"></div>
+                        </div>
+
+                    </div>
+                    <div id="window_num_price">
+                        <div id="window_num">
+                            <div>총 수량 &nbsp;</div>
+                            <div id="w_total_number" class="ex_css"></div>
+                            <div>개</div>
+                        </div>
+                        <div id="window_price">
+                            <div>총 결제금액 &nbsp;</div>
+                            <div id="w_total_price" class="ex_css">2000</div>
+                            <div>원</div>
+                        </div>
+                    </div>
+                    <div id="window_bottom">
+                        <div id="돌아가기" onclick="close_window_pay()">←<br>돌아가기</div>
+                        <div id="먹고가기" onclick="change_window_btn()"><br>먹고가기</div>
+                        <div id="가져가기" onclick="change_window_btn()"><br>가져가기</div>
+
+                        <div id="돌아가기_2" onclick="back_2_window_btn()">←<br>돌아가기</div>
+                        <div id="쿠폰사용">
+                            <div id="coupon"></div>
+                            <div><br>쿠폰사용</div>
+                        </div>
+                        <div id="페이코">PAYCO<br>페이코</div>
+                        <div id="카드결제" onclick="open_w_카드결제()"><br>카드결제</div>
+
+                    </div>
+
+                </div>
+
+                <div id="포인트적립"> </div>
+
+                <div id="w_카드결제">
+                    <div id="w_카드결제_top">
+                        <div>카드 결제</div>
+                        <div onclick="close_w_카드결제()">X</div>
+                    </div>
+                    <div id="w_block">
+                        <div>다음 그림과 같이 신용/체크카드를 넣어주세요</div>
+                        <div id="insert_card_w"></div>
+                    </div>
+                    <div id="w_list">
+                        <div id="w_list_1">
+                            <div>총 결제금액</div>
+                            <div id="w_카드결제_total_price">2000원</div>
+                        </div>
+                        <div>
+                            <div>할부개월</div>
+                            <div>일시불</div>
+                        </div>
+                        <div id="w_list_1">
+                            <div>카드번호</div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div id="w_bottom">
+                        <div id="취소" onclick="close_w_카드결제()">취소</div>
+                        <div id="승인요청"> 승인요청</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="설명">
+        <div id="step1">
+            <h2>1. 종류 바꾸는 버튼</h2>
+            이곳에서 음료나 음식의 종류를 바꿀 수 있어요<br>
+            만약 화면에 찾는 음료, 음식이 없다면 상단의 메뉴에서 다른 종류로 바꾸어보세요. </div>
+
+
+        <div id="step2">
+            <h2>2. 선택할 수 있는 상품 </h2>
+            이곳에서 주문하고 싶은 것을 눌러 선택을 할 수 있어요.<br></div>
+
+        <div id="step3">
+            <h2>3. 담은 상품 표시</h2>
+            내가 선택한 상품이 잘 담겼는지, 혹은 잘못 담지는 않았는지
+            결제 전에 확인이 가능합니다.<br></div>
+
+        <div id="step4">
+            <h2>4. 키오스크의 오른쪽 하단 - 결제하기 버튼</h2>
+            구매하고 싶은 상품을 전부 선택했다면 결제하기 버튼을 눌러결제를 진행하세요<br></div>
+
+
+        <div id="step5">
+            <h2>5. 다양한 결제 방법 중 선택 가능</h2>
+            대부분의 키오스크에서 현금결제는 불가합니다. 만약 현금결제를 하고 싶다면 직원에게 문의해보세요.
+            <br>카드결제를 누르고
+            카드를 꽂으면 결제가 완료됩니다.
+            <br>
+        </div>
+
+        <div id="step6">
+            <h2>6. 카드결제 → 카드를 키오스크 하단에 넣어 결제</h2>
+             결제가 완료되면 카드를 빼고 영수증(교환권)을 챙깁니다. 교환권에 적힌 번호로 순서가 되면 주문한 상품을
+            수령합니다.
+
+        </div>
+
+        <div id="step7">
+
+        </div>
+
+    </div>
+
+    <div id="터치" onclick="터치()">
+    </div>
+        </div>
+    </section>
 </html>
+        

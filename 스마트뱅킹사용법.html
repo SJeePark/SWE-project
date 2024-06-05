@@ -4,29 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모바일뱅킹사용법</title>
+    <title>스마트뱅킹 사용법</title>
     <style>
         body {
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'HSDookubi';
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            width: auto;
+            height: auto;
+        }
+
+        .menus {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-top: 1px solid #ebebeb;
+            border-bottom: 4px double rgb(101, 101, 101);
+        }
+
+        .menus button {
+            border: none;
+            background: none;
+            margin: 5px;
+        }
+
+        .menus button:hover {
+            background-color: rgba(204, 217, 179, 0.759);
+            font-weight: bold;
+            cursor: pointer;
         }
 
         header {
-            background-color: #333333;
-            font-size: 20px;
-            color: white;
-            padding: 10px;
+            font-family: 'GongGothicMedium';
+            background-color: #ffffff;
+            font-size: 30px;
+            color: #003399;
+            padding: 5px;
             text-align: center;
+            border-bottom: 3px solid rgb(196, 196, 196);
         }
 
         section {
             margin: 40px;
             font-size: 20px;
+            padding: 10px;
         }
 
-        .banking-video {
+        .title {
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'MICEGothic Bold';
+        }
+
+        .explanation {
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            /* display: flex; */
+        }
+
+        .scam-video {
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 30px;
@@ -40,13 +80,12 @@
             margin-bottom: 50px;
         }
 
-        .banking-stat img {
-            text-align: center;
-            margin-top: 100px;
-            margin-right: 110px;
-            margin-bottom: 50px;
+        .scam-stat img, .scam-video img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
-
 
         .app-listing {
             border: 1px solid #ddd;
@@ -75,100 +114,154 @@
             max-width: 100%;
             height: auto;
         }
+
+        .real-title {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'JalnanGothic';
+            color: #003399;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            width: auto;
+            a {
+                display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+            }
+        }
+
+        .minititle {
+            text-align: left;
+            font-size: 1rem;
+            font-family: 'JalnanGothic';
+            color: #1f6fd0;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+
+        img{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        @font-face {
+            font-family: 'GongGothicMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MICEGothic Bold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'JalnanGothic';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+        font-family: 'HSDookubi';
+        src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HS두꺼비체.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+         }
+        
     </style>
 </head>
 
-
 <body>
+    <span class="logo">
+        <a href="mainpage.html" style="text-decoration-line: none;">
+            <div class="minititle">
+                당신도 할 수 있다,
+            </div>  
+            <div class="real-title">
+                디지털 배움터
+            </div>
+        </a>
+    </span>
+        <div class="menus">
+            <button onclick="window.open('키오스크연습.html')">키오스크</button>
+            <button onclick="window.open('문자피싱.html')">피싱예방</button>
+            <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+            <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+            <button>문제풀기</button>
+        </div>
 
     <header>
-        <h1>모바일뱅킹 이란?</h1>
+        <h1>스마트뱅킹 사용법</h1>
     </header>
 
-    <section id="appListings">
-        <div class="banking-video">
-            <h2>모바일뱅킹 관련 영상</h2>
-            <div class="video">
-                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="video">
-                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="video">
-                <iframe width="560" height="315" src="링크" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-
+    <section id="app-listing">
+        <div class="explanation">
+            <h1>스마트뱅킹 사용법</h1>
+            <ul>
+                <li>
+                    <h2>1. 앱 다운로드 및 설치</h2>
+                    <p>스마트폰의 앱 스토어(예: 구글 플레이, 애플 앱스토어)에서 은행 앱을 검색하여 다운로드하고 설치합니다.</p>
+                    <img src="/image/KakaoTalk_20240529_200742483_01.jpg" alt="스마트뱅킹 다운로드">
+                </li>
+    
+            </ul>
         </div>
 
-        <div class="banking-video">
-            <h2>사용 통계</h2>
-            <div class="banking-stat">
-                <img src="이미지" alt="통계1">
-            </div>
-
-            <div class="banking-stat">
-                <img src="이미지" alt="통계2">
-            </div>
-
-            <div class="banking-stat">
-                <img src="이미지" alt="통계3">
-            </div>
-
-
+        <div class="explanation">
+            <ul>
+                <li>
+                    <h2>2. 회원가입 및 로그인</h2>
+                    <p>앱을 실행하고 회원가입 절차를 진행합니다. 이미 계정이 있는 경우 로그인합니다.</p>
+                    <img src="image/KakaoTalk_20240529_200742483_02.jpg" alt="스마트뱅킹 다운로드">
+                    <img src="image/KakaoTalk_20240529_200742483_03.jpg" alt="스마트뱅킹 다운로드">
+                    <img src="image/KakaoTalk_20240529_200742483_04.jpg" alt="스마트뱅킹 다운로드">
+                </li>
+    
+            </ul>
         </div>
 
+        <div class="explanation">
+            <ul>
+                <li>
+                    <h2>3. 계좌 등록</h2>
+                    <p>본인의 은행 계좌를 앱에 등록합니다. 계좌번호와 인증절차를 완료해야 합니다.</p>
+                    <img src="image/KakaoTalk_20240529_200742483_05.jpg" alt="스마트뱅킹 다운로드">
+                </li>
+    
+            </ul>
+        </div>
+
+        <div class="explanation">
+            <ul>
+                <li>
+                    <h2>4. 주요 기능 사용</h2>
+                    <p>송금, 잔액 조회, 거래 내역 확인 등의 주요 기능을 사용합니다. 메뉴에서 원하는 기능을 선택하여 진행합니다.</p>
+                    <img src="image/KakaoTalk_20240529_200742483_06.jpg" alt="스마트뱅킹 다운로드">
+                </li>
+    
+            </ul>
+        </div>
+
+        <div class="explanation">
+            <ul>
+                <li>
+                    <h2>5. 보안 설정</h2>
+                    <p>앱 내 보안 설정을 확인하고 필요한 경우 추가 인증 수단(예: 지문인식, 2단계 인증)을 설정합니다.</p>
+                    <img src="image/KakaoTalk_20240529_200742483_07.jpg" alt="스마트뱅킹 다운로드">
+                    <img src="image/kaka" alt="스마트뱅킹 다운로드">
+                </li>
+    
+            </ul>
+        </div>
+    
     </section>
-
-    <script>
-        const appData = [
-            {
-                imageUrl: "어플 이미지",
-                link: "어플 관련 링크",
-                title: "어플 이름",
-                company: "제작사",
-                description: `사용 방법 및 특이점`
-            },
-
-            {
-                imageUrl: "어플 이미지",
-                link: "어플 관련 링크",
-                title: "어플 이름",
-                company: "제작사",
-                description: `사용 방법 및 특이점`
-            },
-
-        ];
-
-        const appListingsContainer = document.getElementById('appListings');
-
-        appData.forEach(app => {
-            const appListing = document.createElement('div');
-            appListing.classList.add('app-listing');
-
-            appListing.innerHTML = `
-                <h2>모바일뱅킹 어플 및 사용법 소개(이미지 클릭시 관련 사이트로 이동)</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <a href="${app.link}" target="_blank">
-                                <img src="${app.imageUrl}" alt="${app.title}"></a><br>
-                        </td>
-                        <td>
-                            <h3>${app.title}</h3>
-                            <p>${app.company}</p>
-                            <h4>어플 설명</h4>
-                            <p>${app.description}</p>
-                        </td>
-                    </tr>
-                </table>
-            `;
-
-            appListingsContainer.appendChild(appListing);
-        });
-    </script>
 
 </body>
 

@@ -15,30 +15,6 @@
             height: auto;
         }
 
-        .real-title {
-    text-align: left;
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: 'JalnanGothic';
-    color: #003399;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    width: auto;
-    a {
-        display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
-    }
-}
-
-.minititle {
-    text-align: left;
-    font-size: 1rem;
-    font-family: 'JalnanGothic';
-    color: #1f6fd0;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    margin-top: 30px;
-}
         .menus {
             margin-top: 1em;
             display: flex;
@@ -63,7 +39,7 @@
         header {
             font-family: 'GongGothicMedium';
             background-color: #ffffff;
-            font-size: 30px;
+            font-size: 25px;
             color: #003399;
             padding: 5px;
             text-align: center;
@@ -72,7 +48,7 @@
 
         section {
             margin: 40px;
-            font-size: 20px;
+            font-size: 15px; /* section 글씨 크기 조절 */
             padding: 10px;
         }
 
@@ -87,7 +63,6 @@
             padding: 30px;
             margin-bottom: 30px;
             background-color: #fff;
-            /* display: flex; */
         }
 
         .scam-video {
@@ -96,6 +71,7 @@
             margin-bottom: 30px;
             background-color: #fff;
             display: flex;
+            font-size: 24px; /* scam-video 글씨 크기 조절 */
         }
 
         .video {
@@ -105,7 +81,7 @@
         }
 
         .scam-stat img, .scam-video img {
-            max-width: 100%;
+            max-width: 50%; /* 이미지 크기를 줄입니다 */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -139,6 +115,31 @@
             height: auto;
         }
 
+        .real-title {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'JalnanGothic';
+            color: #003399;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            width: auto;
+            a {
+                display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+            }
+        }
+
+        .minititle {
+            text-align: left;
+            font-size: 1rem;
+            font-family: 'JalnanGothic';
+            color: #1f6fd0;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+
         @font-face {
             font-family: 'GongGothicMedium';
             src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
@@ -152,6 +153,14 @@
             font-weight: 700;
             font-style: normal;
         }
+
+        @font-face {
+            font-family: 'JalnanGothic';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
     </style>
 </head>
 
@@ -166,14 +175,14 @@
             </div>
         </a>
     </span>
+        <div class="menus">
+            <button onclick="window.open('키오스크연습.html')">키오스크</button>
+            <button onclick="window.open('문자피싱.html')">피싱예방</button>
+            <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+            <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+            <button>문제풀기</button>
+        </div>
 
-    <div class="menus">
-        <button onclick="window.open('키오스크연습.html')">키오스크</button>
-        <button onclick="window.open('문자피싱.html')">피싱예방</button>
-        <button onclick="window.open('QR코드사용법.html')">QR코드</button>
-        <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
-        <button>문제풀기</button>
-    </div>
     <header>
         <h1>QR코드 사용법</h1>
     </header>
@@ -181,7 +190,7 @@
     <section id="appListings">
         <div class='explanation'>
             <div class="title">QR코드란?</div>
-            <p style="font-family: Arial, Helvetica, sans-serif;">정의</p>QR코드는 'Quick Response'의 약자로, 빠르게 정보를 읽어낼 수 있는 특별한 바코드입니다. 네모난 모양 안에 작은 사각형들이 모여있는 모습입니다. 보통 스마트폰이나 태블릿 같은 기기로 스캔하면 다양한 정보(예: 웹사이트, 연락처, 메뉴판 등)를 바로 확인할 수 있습니다.<br>
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 24px;"></p>QR코드는 빠르게 정보를 읽어낼 수 있는 특별한 바코드입니다. 네모난 모양 안에 작은 사각형들이 모여있는 모습입니다. 보통 스마트폰이나 태블릿 같은 기기로 스캔하면 다양한 정보(예: 웹사이트, 연락처, 메뉴판 등)를 바로 확인할 수 있습니다.<br>
             <div class="title">사용되는 곳</div>
             <li>
                 식당 주문
@@ -198,6 +207,9 @@
             <div class="video">
                 <iframe width="764.444444" height="430" src="https://www.youtube.com/embed/fwbxf1crd3M" frameborder="0" allowfullscreen></iframe>
             </div>
+            <li>
+                QR코드를 보다 더 잘 사용 할 수 있는 방법에 대해 알아보는 영상입니다.
+            </li>
         </div>
 
         <div class="scam-video">
@@ -206,8 +218,6 @@
             <a href="https://ifh.cc/v-SVHsvp" target="_blank">
                 <img src="https://ifh.cc/g/SVHsvp.png" border="0">
             </a>
-            <!-- 업로드된 이미지 파일 추가 -->
-            <img src="/mnt/data/image.png" alt="QR 코드">
         </div>
     </section>
 
