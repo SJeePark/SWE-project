@@ -7,34 +7,72 @@
     <title>스마트뱅킹 사용법</title>
     <style>
         body {
-            font-family: 'HSDookubi';
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            width: auto;
-            height: auto;
-        }
+    font-family: 'NanumSquareRound';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    
+}
 
-        .menus {
-            margin-top: 1em;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            border-top: 1px solid #ebebeb;
-            border-bottom: 4px double rgb(101, 101, 101);
-        }
 
-        .menus button {
-            border: none;
-            background: none;
-            margin: 5px;
-        }
+.logo a {
+    text-decoration: none;
+    text-decoration-line: none;
+    display: inline-block; /* 링크를 글씨 크기에 맞추기 위해 inline-block으로 설정 */
+}
 
-        .menus button:hover {
-            background-color: rgba(204, 217, 179, 0.759);
-            font-weight: bold;
-            cursor: pointer;
-        }
+
+.real-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'JalnanGothic';
+    color: #003399;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    a {
+        display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+    }
+}
+
+button{
+    margin: 10px 30px;
+}
+
+.minititle {
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'JalnanGothic';
+    color: #1f6fd0;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.menus {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 4px double rgb(101, 101, 101);
+}
+
+.menus button {
+    border: none;
+    background: none;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.menus button:hover {
+    background-color: rgba(204, 217, 179, 0.759);
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
         header {
             font-family: 'GongGothicMedium';
@@ -169,17 +207,17 @@
         }
 
         @font-face {
-        font-family: 'HSDookubi';
-        src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HS두꺼비체.woff') format('woff');
+        font-family: 'NanumSquareRound';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
         font-weight: normal;
         font-style: normal;
-         }
+    }
         
     </style>
 </head>
 
 <body>
-    <span class="logo">
+    <div class="logo">
         <a href="mainpage.html" style="text-decoration-line: none;">
             <div class="minititle">
                 당신도 할 수 있다,
@@ -188,13 +226,14 @@
                 디지털 배움터
             </div>
         </a>
-    </span>
+
+    </div>
         <div class="menus">
             <button onclick="window.open('키오스크연습.html')">키오스크</button>
             <button onclick="window.open('문자피싱.html')">피싱예방</button>
             <button onclick="window.open('QR코드사용법.html')">QR코드</button>
             <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
-            <button>문제풀기</button>
+            <button onclick="window.open('퀴즈.html')">문제풀기</button>
         </div>
 
     <header>

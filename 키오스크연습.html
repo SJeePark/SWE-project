@@ -6,58 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>키오스크 사용법</title>
     <style>
-   .minititle {
-            text-align: left;
-            font-size: 1rem;
-            font-family: 'JalnanGothic';
-            color: #1f6fd0;
-            margin-bottom: 10px;
-            margin-left: 20px;
-            margin-top: 30px;
-        }
-        .real-title {
-            text-align: left;
-            font-size: 2rem;
-            font-weight: bold;
-            font-family: 'JalnanGothic';
-            color: #003399;
-            margin-left: 20px;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            width: auto;
-            a {
-                display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
-            }
-        }
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            width: auto;
-            height: auto;
-        }
+   body {
+    font-family: 'NanumSquareRound';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    
+}
 
-        .menus {
-            margin-top: 1em;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            border-top: 1px solid #ebebeb;
-            border-bottom: 4px double rgb(101, 101, 101);
-        }
 
-        .menus button {
-            border: none;
-            background: none;
-            margin: 5px;
-        }
+.logo a {
+    text-decoration: none;
+    text-decoration-line: none;
+    display: inline-block; /* 링크를 글씨 크기에 맞추기 위해 inline-block으로 설정 */
+}
 
-        .menus button:hover {
-            background-color: rgba(204, 217, 179, 0.759);
-            font-weight: bold;
-            cursor: pointer;
-        }
+
+.real-title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'JalnanGothic';
+    color: #003399;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    a {
+        display: inline-block; /* 링크가 그 내용만큼만 공간을 차지하도록 설정 */
+    }
+}
+
+button{
+    margin: 10px 30px;
+}
+
+.minititle {
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'JalnanGothic';
+    color: #1f6fd0;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.menus {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 4px double rgb(101, 101, 101);
+}
+
+.menus button {
+    border: none;
+    background: none;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.menus button:hover {
+    background-color: rgba(204, 217, 179, 0.759);
+    font-weight: bold;
+    cursor: pointer;
+}
 
         header {
             font-family: 'GongGothicMedium';
@@ -139,23 +153,37 @@
         }
 
         @font-face {
-            font-family: 'GongGothicMedium';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-        @font-face {
-            font-family: 'MICEGothic Bold';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-        }
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JalnanGothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
     </style>
 </head>
 
 <body>
-    <span class="logo">
+    <div class="logo">
         <a href="mainpage.html" style="text-decoration-line: none;">
             <div class="minititle">
                 당신도 할 수 있다,
@@ -164,14 +192,16 @@
                 디지털 배움터
             </div>
         </a>
-    <div class="menus">
-        <button onclick="window.open('키오스크연습.html')">키오스크</button>
-        <button onclick="window.open('문자피싱.html')">피싱예방</button>
-        <button onclick="window.open('QR코드사용법.html')">QR코드</button>
-        <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
-        <button>문제풀기</button>
-        
+
     </div>
+        <div class="menus">
+            <button onclick="window.open('키오스크연습.html')">키오스크</button>
+            <button onclick="window.open('문자피싱.html')">피싱예방</button>
+            <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+            <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+            <button onclick="window.open('퀴즈.html')">문제풀기</button>
+        </div>
+
     <header>
         <h1>키오스크 사용법</h1>
     </header>
@@ -179,7 +209,7 @@
     <section id="appListings">
         <div class='explanation'>
             <div class="title">키오스크란?</div>
-            <p style="font-family: Arial, Helvetica, sans-serif;">정의</p>음식,음료 등을 파는 매점'을 뜻하는 영어단어로, 정보통신에서는 정보서비스와 업무의 무인ㆍ자동화를 통해 대중들이 쉽게 이용할 수 있도록 공공장소에 설치한 무인단말기를 말한다.<br>
+            <p style="font-family: Arial, Helvetica, sans-serif;"></p>음식,음료 등을 파는 매점'을 뜻하는 영어단어로, 정보통신에서는 정보서비스와 업무의 무인ㆍ자동화를 통해 대중들이 쉽게 이용할 수 있도록 공공장소에 설치한 무인단말기를 말한다.<br>
            
         </div>
         <div class="container">
