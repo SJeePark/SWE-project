@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>키오스크 배우기</title>
+    <style>
+        /* 여기에 CSS 스타일을 추가하세요 */
+    </style>
+</head>
+<body>
+    <div class="kiosk_simulation">
+        <div class="kiosk_mega_backdround">
+            <div class="kiosc_mega_screen">
+                <div id="mega_start_img">
+                    <button id="mega_start_btn" onclick="main_onclick()">시작하기</button>
+                </div>
+                <div id="mega_order" style="display:none;">
+                    <div id="top_bar">
+                        <div id="mega_top_bar_home" onclick="herf_home()">홈</div>
+                        <div id="mega_top_bar_name">키오스크 배우기</div>
+                        <div id="mega_top_bar_lang">LANG</div>
+                    </div>
+                    <div id="mega_menu_bar">
+                        <div id="menu_bar_left" onclick="turn_menu_page(this.id)">&#60;</div>
+                        <div class="mega_menu_1" title="추천_음료" onclick="open_menu_table(this.title)">추천(음료)</div>
+                        <div class="mega_menu_1" title="추천_디저트" onclick="open_menu_table(this.title)">추천(디저트)</div>
+                        <div class="mega_menu_1" title="커피_HOT" onclick="open_menu_table(this.title)">커피(HOT)</div>
+                        <div class="mega_menu_1" title="커피_ICE" onclick="open_menu_table(this.title)">커피(ICE)</div>
+                        <div class="mega_menu_2" title="스무디_프라페" onclick="open_menu_table(this.title)">스무디&프라페</div>
+                        <div class="mega_menu_2" title="에이드_주스" onclick="open_menu_table(this.title)">에이드&주스</div>
+                        <div class="mega_menu_2" title="Tea" onclick="open_menu_table(this.title)">Tea</div>
+                        <div class="mega_menu_2" title="커피_콜드브루" onclick="open_menu_table(this.title)">커피(콜드브루)</div>
+                        <div id="menu_bar_right" onclick="turn_menu_page(this.id)">></div>
+                    </div>
+                </div>
+                <div id="mega_menu_table">
+                    <div id="right_btn">></div>
+                    <div id="left_btn">&#60;</div>
+                    <div id="추천_음료" class="p1" style="display:none;">
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000" onclick="option(this.id, this.title, this.dataset.price)">아이스 아메리카노</div>
+                            <div id="유니콘프라페" title="no_option" data-price="4800" onclick="option(this.id, this.title, this.dataset.price)">유니콘 프라페</div>
+                            <div id="민트_초코" title="no_option" data-price="4200" onclick="option(this.id, this.title, this.dataset.price)">민트 초코</div>
+                        </div>
+                        <div id="row">
+                            <div id="카라멜_마끼야또" title="coffee" data-price="4500" onclick="option(this.id, this.title, this.dataset.price)">카라멜 마끼야또</div>
+                            <div id="바닐라라떼" title="coffee" data-price="4200" onclick="option(this.id, this.title, this.dataset.price)">바닐라 라떼</div>
+                            <div id="초콜릿라떼" title="no_option" data-price="4800" onclick="option(this.id, this.title, this.dataset.price)">초콜릿 라떼</div>
+                        </div>
+                    </div>
+                    <div id="추천_디저트" class="p1" style="display:none;">
+                        <div id="row">
+                            <div id="딸기_케이크" title="no_option" data-price="5000" onclick="option(this.id, this.title, this.dataset.price)">딸기 케이크</div>
+                            <div id="초코_케이크" title="no_option" data-price="4800" onclick="option(this.id, this.title, this.dataset.price)">초코 케이크</div>
+                            <div id="치즈_케이크" title="no_option" data-price="4800" onclick="option(this.id, this.title, this.dataset.price)">치즈 케이크</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mega_order_list"></div>
+                <div id="mega_order_option" style="display:none;">
+                    <div id="order_op_title">옵션 선택</div>
+                    <div id="option">
+                        <div id="size">
+                            <div id="title">사이즈</div>
+                            <div id="option_list">
+                                <div class="option_btn" id="small">small</div>
+                                <div class="option_btn" id="regular">regular</div>
+                                <div class="option_btn" id="large">large</div>
+                            </div>
+                        </div>
+                        <div id="num">
+                            <div id="title">수량</div>
+                            <div id="option_list">
+                                <div class="option_btn" id="num_1">1</div>
+                                <div class="option_btn" id="num_2">2</div>
+                                <div class="option_btn" id="num_3">3</div>
+                            </div>
+                        </div>
+                        <div id="temp">
+                            <div id="title">온도</div>
+                            <div id="option_list">
+                                <div class="option_btn" id="hot">HOT</div>
+                                <div class="option_btn" id="ice">ICE</div>
+                            </div>
+                        </div>
+                        <div id="option_btns">
+                            <div id="option_btn_cancel" onclick="close_option()">취소</div>
+                            <div id="option_btn_check" onclick="close_option()">확인</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mega_pay_list">
+                    <div id="order_list_title">주문 내역</div>
+                    <div id="order_list">
+                    </div>
+                    <div id="total_price">
+                        <div id="total_price_title">총 합계</div>
+                        <div id="total_price_num">0원</div>
+                    </div>
+                    <div id="order_list_btn">
+                        <div id="pay_cancel">취소하기</div>
+                        <div id="pay_check">결제하기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function main_onclick() {
+            document.getElementById('mega_start_img').style.display = 'none';
+            document.getElementById('mega_order').style.display = 'block';
+        }
+
+        function herf_home() {
+            document.getElementById('mega_start_img').style.display = 'block';
+            document.getElementById('mega_order').style.display = 'none';
+            document.getElementById('mega_menu_table').style.display = 'none';
+            document.getElementById('mega_order_option').style.display = 'none';
+        }
+
+        function turn_menu_page(id) {
+            const menus = document.querySelectorAll('.mega_menu_1, .mega_menu_2');
+            let currentPage = 1;
+
+            menus.forEach(menu => {
+                if (menu.style.display !== 'none') {
+                    currentPage = parseInt(menu.className.split('_')[2]);
+                }
+            });
+
+            const nextPage = id === 'menu_bar_right' ? currentPage + 1 : currentPage - 1;
+
+            menus.forEach(menu => {
+                menu.style.display = menu.className.includes(nextPage) ? 'block' : 'none';
+            });
+        }
+
+        function open_menu_table(title) {
+            const menuPages = document.querySelectorAll('.p1');
+            menu

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR코드 사용법</title>
+    <title>스마트뱅킹 사용법</title>
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
@@ -39,7 +39,7 @@
         header {
             font-family: 'GongGothicMedium';
             background-color: #ffffff;
-            font-size: 25px;
+            font-size: 30px;
             color: #003399;
             padding: 5px;
             text-align: center;
@@ -48,14 +48,16 @@
 
         section {
             margin: 40px;
-            font-size: 15px; /* section 글씨 크기 조절 */
+            font-size: 20px;
             padding: 10px;
+            line-height: 1.6; /* 자간 추가 */
         }
 
         .title {
-            font-size: 35px;
+            font-size: 40px; /* 제목 크기 조정 */
             font-weight: bold;
             font-family: 'MICEGothic Bold';
+            letter-spacing: 2px; /* 자간 추가 */
         }
 
         .explanation {
@@ -71,7 +73,6 @@
             margin-bottom: 30px;
             background-color: #fff;
             display: flex;
-            font-size: 24px; /* scam-video 글씨 크기 조절 */
         }
 
         .video {
@@ -81,7 +82,7 @@
         }
 
         .scam-stat img, .scam-video img {
-            max-width: 50%; /* 이미지 크기를 줄입니다 */
+            max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -160,8 +161,17 @@
             font-weight: normal;
             font-style: normal;
         }
-        
+
+        .example-images img {
+            width: 200px; /* 사진 크기 통일 */
+            height: 150px; /* 사진 크기 통일 */
+            display: block;
+            margin-left: 20px; /* 사진 왼쪽 정렬 */
+            margin-top: 10px; /* 사진 간격 추가 */
+        }
+
     </style>
+
 </head>
 
 <body>
@@ -175,14 +185,14 @@
             </div>
         </a>
     </span>
-        <div class="menus">
-            <button onclick="window.open('키오스크연습.html')">키오스크</button>
-            <button onclick="window.open('문자피싱.html')">피싱예방</button>
-            <button onclick="window.open('QR코드사용법.html')">QR코드</button>
-            <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
-            <button>문제풀기</button>
-        </div>
 
+    <div class="menus">
+        <button onclick="window.open('키오스크연습.html')">키오스크</button>
+        <button onclick="window.open('문자피싱.html')">피싱예방</button>
+        <button onclick="window.open('QR코드사용법.html')">QR코드</button>
+        <button onclick="window.open('스마트뱅킹사용법.html')">스마트뱅킹</button>
+        <button>문제풀기</button>
+    </div>
     <header>
         <h1>QR코드 사용법</h1>
     </header>
@@ -190,33 +200,32 @@
     <section id="appListings">
         <div class='explanation'>
             <div class="title">QR코드란?</div>
-            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 24px;"></p>QR코드는 빠르게 정보를 읽어낼 수 있는 특별한 바코드입니다. 네모난 모양 안에 작은 사각형들이 모여있는 모습입니다. 보통 스마트폰이나 태블릿 같은 기기로 스캔하면 다양한 정보(예: 웹사이트, 연락처, 메뉴판 등)를 바로 확인할 수 있습니다.<br>
+            <p style="font-family: Arial, Helvetica, sans-serif;">QR코드는 'Quick Response'의 약자로, 빠르게 정보를 읽어낼 수 있는 특별한 바코드입니다. 네모난 모양 안에 작은 사각형들이 모여있는 모습입니다. 보통 스마트폰이나 태블릿 같은 기기로 스캔하면 다양한 정보(예: 웹사이트, 연락처, 메뉴판 등)를 바로 확인할 수 있습니다.</p>
             <div class="title">사용되는 곳</div>
-            <li>
-                식당 주문
-            </li>
-            <li>
-                간편 결제
-            </li>
-            <li>
-                정보 제공
-            </li>
+            <ul class="example-images">
+                <li>
+                    식당 주문 <img src="음식주문 qr.jpeg" alt="식당 주문">
+                </li>
+                <li>
+                    간편 결제 <img src="간편결제 qr.jpg" alt="간편 결제">
+                </li>
+                <li>
+                    정보 제공 <img src="정보제공 qr.jpg" alt="정보 제공">
+                </li>
+            </ul>
         </div>
         <div class="scam-video">
             <div class="title">QR코드 사용 영상</div>
             <div class="video">
                 <iframe width="764.444444" height="430" src="https://www.youtube.com/embed/fwbxf1crd3M" frameborder="0" allowfullscreen></iframe>
             </div>
-            <li>
-                QR코드를 보다 더 잘 사용 할 수 있는 방법에 대해 알아보는 영상입니다.
-            </li>
         </div>
 
         <div class="scam-video">
             <div class="title">QR코드 해보기</div><br>
             <div class="scam-stat"></div>
             <a href="https://ifh.cc/v-SVHsvp" target="_blank">
-                <img src="https://ifh.cc/g/SVHsvp.png" border="0">
+                <img src="qr코드.png" alt="QR 코드" style="max-width: 50%; height: auto;">
             </a>
         </div>
     </section>

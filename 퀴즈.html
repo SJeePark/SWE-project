@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet">
+
+</head>
+
+<body>
+    <style>
+        body {
+            position: static;
+        }
+
+        .number {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .label {
+            font-size: 150%;
+            font-weight: bold;
+            color: white;
+        }
+
+        .quiz {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz_img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .answer {
+            display: flex;
+        }
+
+        .answer a {
+            position: relative;
+            display: inline-block;
+            padding: 25px 30px;
+            /* margin: 40px 0; */
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 4px;
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            font-size: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: white;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            padding: 25px 30px;
+            margin: 40px 0;
+            color: #03e9f4;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 4px;
+            overflow: hidden;
+            margin-right: 50px;
+
+        }
+
+        a:hover {
+            background: #03e9f4;
+            color: #050801;
+            box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+        }
+
+        a:nth-child(1) {
+            filter: hue-rotate(270deg);
+        }
+
+        a:nth-child(2) {
+            filter: hue-rotate(110deg);
+        }
+
+        a span {
+            position: absolute;
+            display: block;
+        }
+
+        a span:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+            animation: animate1 1s linear infinite;
+        }
+
+        @keyframes animate1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: animate2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        @keyframes animate2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        a span:nth-child(3) {
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: animate3 1s linear infinite;
+            animation-delay: 0.50s;
+        }
+
+        @keyframes animate3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+
+        a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: animate4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+
+        @keyframes animate4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        .button.res {
+            width: 150px;
+            color: #ffffff;
+            background: #79aff8;
+            border: 2px solid #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .button.res:hover {
+            background: #3084f4;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .button.res:active {
+            background: #3084f4;
+            color: #ffffff;
+        }
+
+        .button.res:focus {
+            background-color: #3084f4;
+            outline: 0;
+        }
+
+        .button.restart {
+            width: 150px;
+            color: #ffffff;
+            background: #f88379;
+            border: 2px solid #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .button.restart:hover {
+            background: #e63a00;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .button.restart:active {
+            background: #e63a00;
+            color: #ffffff;
+        }
+
+        .button.restart:focus {
+            background-color: #e63a00;
+            outline: 0;
+        }
+
+        .admin {
+            width: 320px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    </style>
+
+    <div class="number" id="number_id">
+
+    </div>
+
+    <div class="quiz" id="quiz_id">
+
+    </div>
+
+    <div class="answer" id="answer_id">
+
+    </div>
+
+
+    <script>
+        var number_id, quiz_id, answer_id;
+        var quiz_arr = ['q1.png', 'q2.png', 'q3.png', 'q4.png', 'q5.png'];
+        var answer_arr = ['X', 'X', 'O', 'X', 'X'];
+
+        var selectAnswer, score;
+        var imgNum, startNum, endNum;
+
+        function init() {
+            number_id = document.getElementById("number_id");
+            quiz_id = document.getElementById("quiz_id");
+            answer_id = document.getElementById("answer_id");
+
+            startNum = 0;
+            endNum = 5;
+            score = 0;
+
+            setquiz();
+        }
+
+        init();
+
+        function setquiz() {
+            quiz_id.innerHTML = "<img src='./OX퀴즈 이미지/" + quiz_arr[startNum] + "' class='quiz_img'>";
+
+            if (startNum == endNum) {
+
+                switch (score){
+                    case 0 : answer_id.innerHTML = "<img src='./OX퀴즈 이미지/S0.png' class='quiz_img'> <button type='button' class='button restart' onclick='history.go(0);'>다시하기</button>";
+                        break;
+                    case 1 : answer_id.innerHTML = "<img src='./OX퀴즈 이미지/S1.png' class='quiz_img'> <button type='button' class='button restart' onclick='history.go(0);'>다시하기</button>";
+                        break;
+                    case 2 : answer_id.innerHTML = "<img src='./OX퀴즈 이미지/S2.png' class='quiz_img'> <button type='button' class='button restart' onclick='history.go(0);'>다시하기</button>";
+                        break;
+                    case 3 : answer_id.innerHTML = "<img src='./OX퀴즈 이미지/S3.png' class='quiz_img'> <button type='button' class='button restart' onclick='history.go(0);'>다시하기</button>";
+                        break;
+                    case 4 : answer_id.innerHTML = "<img src='./OX퀴즈 이미지/S4.png' class='quiz_img'> <button type='button' class='button restart' onclick='history.go(0);'>다시하기</button>";
+                        break;
+                    default : answer_id.innerHTML = "<img src='./OX퀴즈 이미지/S5.png' class='quiz_img'> <button type='button' class='button restart' onclick='history.go(0);'>다시하기</button>";
+                }
+
+
+            } else {
+                answer_id.innerHTML = "<a onclick='btnOFunc();'><span></span><span></span><span></span><span></span>O</a> <a onclick='btnXFunc();'><span></span><span></span><span></span><span></span>X</a>";
+            }
+        }
+
+        function btnOFunc() {
+            selectAnswer = "O";
+            if (answer_arr[startNum] == selectAnswer) {
+                score++;
+            }
+            startNum++;
+            setquiz();
+        }
+
+        function btnXFunc() {
+            selectAnswer = "X";
+            if (answer_arr[startNum] == selectAnswer) {
+                score++;
+            }
+            startNum++;
+            setquiz();
+        }
+    </script>
+</body>
+
+</html>
